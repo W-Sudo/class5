@@ -28,6 +28,7 @@ export default function App() {
         image4,
         image5,
     ];
+    const [isDark,setIsDark]=useState(true);
     return (
       <>
         <h1>Image gallery example</h1>
@@ -37,13 +38,15 @@ export default function App() {
             src={mainImage.src}
             alt={mainImage.alt}
           />
-          <div className="overlay"></div>
-          <button className="dark">Darken</button>
+          <div className="overlay" style={isDark?{}:{backgroundColor:'rgba(0, 0, 0, 0.5)'}}></div>
+
+          {isDark?(<button className="dark" onClick={()=>setIsDark(!isDark)}>Darken</button>)
+          :(<button className="light" onClick={()=>setIsDark(!isDark)}>Lighten</button>)}
         </div>
         <div className="thumb-bar">
-            {images.map((image)=>{
+            {images.map((image,i)=>{
                 return (
-                <div onClick={(e)=>setMainImage(image)}><img key={image} src={image.src} alt={image.alt}/></div>)
+                <div key={i} onClick={(e)=>setMainImage(image)}><img src={image.src} alt={image.alt}/></div>)
             })}
         </div>
       </>
