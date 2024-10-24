@@ -1,23 +1,23 @@
 import {useState} from "react";
 export default function App() {
     const image1={
-        src:"images/pic1.jpg",
+        src:"/images/pic1.jpg",
         alt:"Closeup of a human eye"
     }
     const image2={
-        src:"images/pic2.jpg",
+        src:"/images/pic2.jpg",
         alt:"Rock that looks like a wave"
     }
     const image3={
-        src:"images/pic3.jpg",
+        src:"/images/pic3.jpg",
         alt:"Purple and white pansies"
     }
     const image4={
-        src:"images/pic4.jpg",
+        src:"/images/pic4.jpg",
         alt:"Section of wall from a pharoah's tomb"
     }
     const image5={
-        src:"images/pic5.jpg",
+        src:"/images/pic5.jpg",
         alt:"Large moth on a leaf"
     }
     const [mainImage,setMainImage]=useState(image1);
